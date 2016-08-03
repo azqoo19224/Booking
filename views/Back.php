@@ -22,7 +22,7 @@
     </div>
  
   <div>
-    <form  meta='post'>
+    <form  meta='post' action="Back/btnOK">
       <table style="text-align:center;margin:0 auto;">
         <tr>
           <td>活動名稱</td>
@@ -33,7 +33,7 @@
         <tr>
           <td>輸入限制人數</td>
           <td>
-            <input type="text" name="activity_num"/>
+            <input type="text" name="max_num"/>
           </td>
         </tr>
         <tr>
@@ -50,13 +50,13 @@
         <tr>
           <td>活動開始報名時間</td>
           <td> 
-            <input type="datetime-local" name="activity_time"/> 
+            <input type="datetime-local" name="start_time"/> 
           </td>
         </tr>
         <tr>
           <td>活動結束報名時間</td>
           <td> 
-            <input type="datetime-local" name="activity_end"/> 
+            <input type="datetime-local" name="end_time"/> 
           </td>
         </tr>
         <tr>
