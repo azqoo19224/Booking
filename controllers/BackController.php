@@ -4,7 +4,7 @@ class BackController extends Controller {
  
     
     function index() {
-   
+     
         $this->view("Back",$data);
     }
     
