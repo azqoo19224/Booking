@@ -11,20 +11,13 @@
 	  <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css"/>
 	  	  <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.min.css"/> 
     <title>activity-Back</title>
-    <?php  $this->js("jquery007");?>
-    <?php  $this->js("jquery");?>
-    <?php  $this->js("Back");?>
-    <?php  $this->js("jquery.datetimepicker.full");?>
-    <?php  $this->js("Back");?>
-    <?php  $this->js("Back");?>
-    <?php  $this->js("jquery.datetimepicker.min");?>
-    <?php  $this->js("jquery.datetimepicker");?>
-    <script type="text/javascript">
-$(document).ready(function() {
-      $('#start_time').datetimepicker();  
-      $('#end_time').datetimepicker(); 
-});
-    </script>
+    <?php  $this->js("jquery007");
+           $this->js("jquery");
+           $this->js("Back");
+           $this->js("jquery.datetimepicker.full");
+           $this->js("jquery.datetimepicker.min");
+           $this->js("jquery.datetimepicker");
+    ?>
  
 </head>
 <body>
@@ -86,7 +79,7 @@ $(document).ready(function() {
           </td>
         </tr>
         <tr>
-          <td>標號</td>
+          <td>編號</td>
           <td>名稱</td>
         </tr>
         <tr>
