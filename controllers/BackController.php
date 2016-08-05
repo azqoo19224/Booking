@@ -3,25 +3,28 @@
 class BackController extends Controller {
  
     
-    function index() {
+    function index()
+    {
      
-        $this->view("Back",$data);
+        $this->view("Back",$date);
     }
     
     
-    function btnOK(){
-        
-        $join_number=$_POST["join_number"];
-        $join_name =$_POST["join_name"];
-        $name=$_POST['activity_name'];
-        
+    function btnOK()
+    {
+    
         $a= $this->model("Backinsert");
         $a->insertA();
         $id=$a->searchID();
         $a->insertJ($id);
+        // header("location:Front/url");
+       
         
+        // $a->show($id);
         
     }
+  
+    
     
   
     

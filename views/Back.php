@@ -9,8 +9,9 @@
 	  <link href="css/styles.css" rel="stylesheet">
 	  <!--<link rel="stylesheet" type="text/css" href="./jquery.datetimepicker.css"/>-->
 	  <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css"/>
-	  	  <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.min.css"/> 
+	  <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.min.css"/> 
     <title>activity-Back</title>
+    
     <?php  $this->js("jquery007");
            $this->js("jquery");
            $this->js("Back");
@@ -53,8 +54,8 @@
           </td>
           <td>
     				<select name="sltOnOff" id="sltOnOff" data-role="slider">
-    					<option value="on" >可攜伴</option>
-    					<option value="off">不可攜伴</option>
+    					<option value="1" >可攜伴</option>
+    					<option value="0">不可攜伴</option>
     				</select>
           </td>
         </tr>
@@ -109,6 +110,13 @@
         </table>
  
     </form>
+  </div>
+  <div>
+    <p id="pname"></p>
+    <p id="pnumber"></p>
+    <p id="pcarry"></p>
+    <p id="pstime"></p>
+    <p id="petime"></p>
   </div>
   
 
