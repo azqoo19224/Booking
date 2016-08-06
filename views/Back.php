@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	  <link href="css/styles.css" rel="stylesheet">
-	  <!--<link rel="stylesheet" type="text/css" href="./jquery.datetimepicker.css"/>-->
 	  <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css"/>
 	  <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.min.css"/> 
     <title>activity-Back</title>

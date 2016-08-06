@@ -14,14 +14,12 @@ class BackController extends Controller {
     {
     
         $a= $this->model("Backinsert");
-        $a->insertA();
+        $url=$a->insertA();
         $id=$a->searchID();
         $a->insertJ($id);
-        // header("location:Front/url");
-       
-        
-        // $a->show($id);
-        
+        $data=$url;
+        $this->view("show",$data);
+     
     }
   
     
