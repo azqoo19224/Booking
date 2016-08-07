@@ -25,7 +25,7 @@
         </div>
   </div>
   <div>
-      <form align="center" meta='post' action="Front/btnSubmit/<?php echo $data['id'] ?>">
+      <form align="center"  method="post" action="../../Front/btnSubmit/<?php echo $data['id']?>">
         <table align="center">
             <tr>
                 <td id="url" style = "display: none;" ><?php echo $data['id']?></td>

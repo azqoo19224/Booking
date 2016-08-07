@@ -25,16 +25,28 @@ class FrontController extends Controller {
     }
     
     function btnSubmit($id){
-        echo $id;
-        exit;
+   
         $senddata = $this -> model("FrontShow");
-        $resule=$senddata->Submit();
-        if($resule !=0){
-            $resule=$senddata->addnum($id);
+        
+        $checkjoin = $senddata->checkjoin($id);
+    
+        if($checkjoin){
+     
+        
+            if($checkjoin['total'] == false)
+            {
+                $resule=$senddata->addnum($id);
+                echo "報名成功";
+                
+            }
+            else
+            {
+                
+                echo "你已經報名過了";
+                
+            }
         }else{
-            
-            echo "error";
-            
+            echo "你不在名單內";
         }
         
     }
