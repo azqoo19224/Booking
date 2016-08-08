@@ -8,7 +8,7 @@ class FrontController extends Controller {
         $this->view("Front",$data);
         
     }
-    
+    //顯示網址
     function url($url){
         // echo $url;
          $d=$this->model("FrontShow");
@@ -19,7 +19,7 @@ class FrontController extends Controller {
     function searchmax(){
         $search = $this->model("FrontShow");
         $max = $search->searchmax();
-        $data =$max;
+        $data =$max['SUM(`total`)'];
         $this->view("show",$data);
         
     }
@@ -29,25 +29,13 @@ class FrontController extends Controller {
         $senddata = $this -> model("FrontShow");
         
         $checkjoin = $senddata->checkjoin($id);
+        if($checkjoin == "報名成功")
+        $resule=$senddata->addnum($id);
+
+          $this->view('show',$checkjoin);
     
-        if($checkjoin){
-     
+ 
         
-            if($checkjoin['total'] == false)
-            {
-                $resule=$senddata->addnum($id);
-                echo "報名成功";
-                
-            }
-            else
-            {
-                
-                echo "你已經報名過了";
-                
-            }
-        }else{
-            echo "你不在名單內";
-        }
         
     }
     

@@ -7,28 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <title>activity-Front</title>
-    <!--<script type="text/javascript" src="Front.js"></script>-->
-
-    <!--<script src="javascripts/jquery.js"></script>-->
- 
     
+    <?php 
+      $this->js("jquery");
+      $this->js("Front");
+    ?>
+
 </head>
 <body>
-  <div class="navbar navbar-custom navbar-inverse navbar-static-top" id="nav">
-        <div class="container">
-          <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav nav-justified">
-              <li><a href="Front">前台</a></li>
-              <li><a href="Back">後台</a></li>
-            </ul>
-          </div>
-        </div>
-  </div>
   <div>
-      <form align="center"  method="post" action="../../Front/btnSubmit/<?php echo $data['id']?>">
+      <form align="center"  method="post" action="/MVC/Front/btnSubmit/<?php echo $data['id']?>">
         <table align="center">
             <tr>
-                <td id="url" style = "display: none;" ><?php echo $data['id']?></td>
+                <td id="ID" style = "display: none;"><?php echo $data['id']?></td>
                 
                 <td>活動名稱</td>
                 <td><?php echo $data['activity_name']?></td>

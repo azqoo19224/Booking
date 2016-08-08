@@ -14,7 +14,7 @@ class Controller {
     }
     
     public function js($js){
-      echo "<script src=../MVC/javascripts/$js.js></script>";
+      echo "<script src=/MVC/javascripts/$js.js></script>";
     }
     
     
