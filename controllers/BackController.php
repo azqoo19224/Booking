@@ -16,6 +16,5 @@ class BackController extends Controller
         $data = $url;
         $this->view("show", $data);
     }
-
 }
 

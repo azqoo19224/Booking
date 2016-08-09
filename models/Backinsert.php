@@ -48,7 +48,5 @@ class Backinsert
           $insertj->execute();
           $i++;
         }
-    
     }
-  
 }

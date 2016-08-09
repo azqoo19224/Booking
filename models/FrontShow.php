@@ -28,36 +28,56 @@ class FrontShow
     
     function checkjoin($id) 
     {
+      $checkMax = DB::$db->prepare("SELECT `max_total` FROM `Activity` WHERE `id` = :id");
+      $checkMax->bindParam(":id", $id);
+      $checkMax->execute();
+      $max = $checkMax->fetch(PDO::FETCH_ASSOC);
+
       try {
           DB::$db->beginTransaction();
-          
-          $check=DB::$db->prepare("SELECT * FROM `join` WHERE `id` = :id AND`user_name` = :name AND `user_number` = :number FOR UPDATE");
-          $check->bindValue(":id", $id);
-          $check->bindValue(":name", $_POST['txtName']);
-          $check->bindValue(":number", $_POST['txtNumber']);
+
+          $check = DB::$db->prepare("SELECT * FROM `join` WHERE `id` = :id AND`user_name` = :name AND `user_number` = :number");
+          $check->bindParam(":id", $id);
+          $check->bindParam(":name", $_POST['txtName']);
+          $check->bindParam(":number", $_POST['txtNumber']);
           $check->execute();
           $checkjoin = $check->fetch(PDO::FETCH_ASSOC);
-          //判斷資格
-          if ($checkjoin) {
-                if ($checkjoin['total'] == false)
-                {
-                    $resule = "報名成功";
-                    $this->addnum($id);
-                } else {
-                    $resule = "你已經報名過了";
+
+          $searchCount = DB::$db->prepare("SELECT SUM(`total`) FROM `join` WHERE id = :id FOR UPDATE");
+          $searchCount->bindParam(":id", $id);
+          $searchCount->execute();
+          $resultCount = $searchCount->fetch(PDO::FETCH_ASSOC);
+          $sum = $resultCount['SUM(`total`)'] + $_POST['number'];
+          // 判斷人數
+          if ($max["max_total"] >= $sum) 
+          {
+              // 判斷資格
+              if ($checkjoin) {
+                    if ($checkjoin['total'] == false)
+                    {
+                        $resule = "報名成功";
+                        $this->addnum($id);
+                    } else {
+                        $resule = "你已經報名過了";
+                    }
+              } else {
+                    $resule = "你不在名單內";
+              } 
+              
+           }else {
+              $resule = "人數已滿";
+          }
+                sleep(3);
+                DB::$db->commit();
+        	    DB::$db = NULL;
+                return $resule;
+             
+            } catch (PDOException $err) {
+        	    DB::$db->rollback();
+        	    echo "Error: " . $err->getMessage();
+        	    exit();
                 }
-          } else {
-                $resule = "你不在名單內";
-          } 
-            DB::$db->commit();
-    	    DB::$db = NULL;
-            return $resule;
-    	    
-    } catch (PDOException $err) {
-	    DB::$db->rollback();
-	    echo "Error: " . $err->getMessage();
-	    exit();
-        }
+            
     }
     
     
@@ -71,7 +91,6 @@ class FrontShow
         $insert->bindParam(":number", $_POST['txtNumber']);
         $insert->execute();
     }
-
 }
 
       
