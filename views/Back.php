@@ -44,7 +44,7 @@
         <tr>
           <td>輸入限制人數</td>
           <td>
-            <input type="text" name="max_num"/>
+            <input type="text" id = "max_num" name="max_num" value='1'/>
           </td>
         </tr>
         <tr>
