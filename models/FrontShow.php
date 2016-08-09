@@ -7,16 +7,18 @@ class FrontShow
          DB::pdoConnect();
       }
       
-    function show($url) {
+    function show($url) 
+    {
         $searchdate = DB::$db->prepare("SELECT `activity_name`, `max_total`, `start_time`, `end_time`,`carry`,`id` FROM `Activity` WHERE `url` = :url");
-        $searchdate->bindParame(":url", $url);
+        $searchdate->bindParam(":url", $url);
         $searchdate->execute();
         $resultName = $searchdate->fetch(PDO::FETCH_ASSOC);
         return $resultName;
     }
     
     //找人數
-    function searchCount() {
+    function searchCount() 
+    {
       $searchCount = DB::$db->prepare("SELECT SUM(`total`) FROM `join` WHERE id = :id");
       $searchCount->bindParam(":id", $_GET['id']);
       $searchCount->execute();
@@ -24,7 +26,8 @@ class FrontShow
       return $resultCount;
     }
     
-    function checkjoin($id) {
+    function checkjoin($id) 
+    {
       try {
           DB::$db->beginTransaction();
           
@@ -35,8 +38,8 @@ class FrontShow
           $check->execute();
           $checkjoin = $check->fetch(PDO::FETCH_ASSOC);
           //判斷資格
-          if($checkjoin) {
-                if($checkjoin['total'] == false)
+          if ($checkjoin) {
+                if ($checkjoin['total'] == false)
                 {
                     $resule = "報名成功";
                     $this->addnum($id);
