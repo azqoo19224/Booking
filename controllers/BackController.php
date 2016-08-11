@@ -1,13 +1,13 @@
 <?php
 
-class BackController extends Controller 
+class BackController extends Controller
 {
-    function index() 
+    function index()
     {
-        $this->view("Back",$date);
+        $this->view("Back", $date);
     }
 
-    function btnOK() 
+    function btnOK()
     {
         $a = $this->model("Backinsert");
         $url = $a->insertA();

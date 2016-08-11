@@ -8,17 +8,17 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	  <link href="css/styles.css" rel="stylesheet">
 	  <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css"/>
-	  <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.min.css"/> 
+	  <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.min.css"/>
     <title>activity-Back</title>
-    
-    <?php  $this->js("jquery007");
-           $this->js("jquery");
-           $this->js("Back");
-           $this->js("jquery.datetimepicker.full");
-           $this->js("jquery.datetimepicker.min");
-           $this->js("jquery.datetimepicker");
+
+    <?php    $this->js("jquery007");
+             $this->js("jquery");
+             $this->js("Back");
+             $this->js("jquery.datetimepicker.full");
+             $this->js("jquery.datetimepicker.min");
+             $this->js("jquery.datetimepicker");
     ?>
- 
+
 </head>
 <body>
   <div class="navbar navbar-custom navbar-inverse navbar-static-top" id="nav">
@@ -31,93 +31,93 @@
         </div>
       </div>
     </div>
- 
+
   <div>
     <form  method="post" action="Back/btnOK">
       <table style="text-align:center;margin:0 auto;">
         <tr>
-          <td>活動名稱</td>
-          <td>    
+            <td>活動名稱</td>
+            <td>
             <input type="text" name="activity_name"/>
-          </td>
+            </td>
         </tr>
         <tr>
-          <td>輸入限制人數</td>
-          <td>
+            <td>輸入限制人數</td>
+            <td>
             <input type="text" id = "max_num" name="max_num" value='1'/>
-          </td>
-        </tr>
-        <tr>
-          <td>  
-            <label for="sltOnOff">是否可攜伴:</label> 
-          </td>
-          <td>
-    				<select name="sltOnOff" id="sltOnOff" data-role="slider">
-    					<option value="1" >可攜伴</option>
-    					<option value="0">不可攜伴</option>
-    				</select>
-          </td>
-        </tr>
-        <tr>
-          <td>活動開始報名時間</td>
-          <td> 
-            <input type="text" name="start_time" id='start_time'/> 
-          </td>
-        </tr>
-        <tr>
-          <td>活動結束報名時間</td>
-          <td> 
-            <input type="text" name="end_time" id='end_time'/> 
-          </td>
-        </tr>
-      </table>
-
-      <table id="table1" style="text-align:center;margin:0 auto;">
-     
-        <tr>
-          <td colspan="2">設定可參加人員
-          </td>
-        </tr>
-        <tr>
-          <td>編號</td>
-          <td>名稱</td>
+            </td>
         </tr>
         <tr>
           <td>
-          <input name="join_number[]" type="text" size="12">
-          </td>
-          <td>
-          <input name="join_name[]" type="text" size="12">
-          </td>
-        </tr>
-       </table>
-    
-       <table style="text-align:center;margin:0 auto;">
-        <tr>
-          <td>
-            <input type="button" value="增加" onclick="add_new_data()"> 
-          </td>
-          <td>
-            <input type="button" value="減少" onclick="remove_data()"><br />
-          <td/>  
+              <label for="sltOnOff">是否可攜伴:</label>
+            </td>
+            <td>
+            <select name="sltOnOff" id="sltOnOff" data-role="slider">
+            <option value="1" >可攜伴</option>
+            <option value="0">不可攜伴</option>
+            </select>
+            </td>
         </tr>
         <tr>
-          <td>
-            <input type="submit" name="btnOK" value="送出"/>
-          </td>
+            <td>活動開始報名時間</td>
+            <td>
+            <input type="text" name="start_time" id='start_time'/>
+            </td>
+        </tr>
+        <tr>
+            <td>活動結束報名時間</td>
+            <td>
+            <input type="text" name="end_time" id='end_time'/>
+            </td>
         </tr>
         </table>
- 
+
+        <table id="table1" style="text-align:center;margin:0 auto;">
+
+        <tr>
+            <td colspan="2">設定可參加人員
+            </td>
+        </tr>
+        <tr>
+            <td>編號</td>
+            <td>名稱</td>
+        </tr>
+        <tr>
+            <td>
+            <input name="join_number[]" type="text" size="12">
+            </td>
+            <td>
+            <input name="join_name[]" type="text" size="12">
+            </td>
+        </tr>
+        </table>
+
+        <table style="text-align:center;margin:0 auto;">
+        <tr>
+            <td>
+            <input type="button" value="增加" onclick="add_new_data()">
+            </td>
+            <td>
+            <input type="button" value="減少" onclick="remove_data()"><br />
+            <td/>
+        </tr>
+        <tr>
+            <td>
+            <input type="submit" name="btnOK" value="送出"/>
+            </td>
+        </tr>
+        </table>
+
     </form>
-  </div>
-  <div>
+    </div>
+    <div>
     <p id="pname"></p>
     <p id="pnumber"></p>
     <p id="pcarry"></p>
     <p id="pstime"></p>
     <p id="petime"></p>
-  </div>
-  
+    </div>
+
 
 </body>
 </html>

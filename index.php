@@ -5,5 +5,3 @@ require_once 'core/Controller.php';
 require_once 'core/DB.php';
 
 $app = new App();
-
-?>
